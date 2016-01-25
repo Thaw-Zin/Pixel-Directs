@@ -1,0 +1,10 @@
+Options +MultiViews
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ /www.pixeldirects.com [L]
+RewriteCond %{HTTP_HOST} ^pixeldirects.com [NC]
+RewriteRule ^(.*)$ http://www.pixeldirects.com/$1 [L,R=301,NC]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
